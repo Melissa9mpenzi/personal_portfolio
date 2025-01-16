@@ -1,0 +1,350 @@
+{% extends "port_app/base.html" %}
+{% load static %}
+
+{% block content %}
+<header>
+    {% comment %} <h1>About Me</h1>
+    <nav>
+        <ul>
+            <li><a href="{% url 'index' %}">Home</a></li>
+            <li><a href="{% url 'about' %}">About</a></li>
+            <li><a href="{% url 'services' %}">Services</a></li>
+            <li><a href="{% url 'resume' %}">Resume</a></li>
+            <li><a href="{% url 'contact' %}">Contact</a></li>
+        </ul>
+    </nav> {% endcomment %}
+</header>
+
+<main>
+    <section class="about-section">
+        <img src="{% static 'images/Mpenzi.jpg' %}" alt="Melissa" class="profile-image">
+        <div class="about-content">
+            <div class="intro-header">
+                <h2>Hello! I'm <span class="highlight">Melissa Sharon Lokoroma</span></h2>
+                <div class="subtitle">Web Developer & Digital Creator</div>
+            </div>
+            
+            <div class="bio-content">
+                <p>I'm a passionate and innovative web developer with a deep love for creating elegant, functional digital solutions. My journey in technology is driven by curiosity, creativity, and a constant desire to learn and grow. I specialize in transforming complex ideas into user-friendly web experiences that not only look great but also provide seamless functionality.</p>
+            </div>
+
+            <div class="tech-skills">
+                <h3>Tech Skills</h3>
+                <div class="skills-list">
+                    <span class="skill-tag">HTML5</span>
+                    <span class="skill-tag">CSS3</span>
+                    <span class="skill-tag">JavaScript</span>
+                    <span class="skill-tag">React</span>
+                    <span class="skill-tag">Node.js</span>
+                    <span class="skill-tag">Python</span>
+                    <span class="skill-tag">Git</span>
+                    <span class="skill-tag">Responsive Design</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="hobbies-section">
+        <h2>My Hobbies</h2>
+        <div class="hobbies-list">
+            <div class="hobby-item">
+                <div class="hobby-icon">👗</div>
+                <p>Fashion</p>
+            </div>
+            <div class="hobby-item">
+                <div class="hobby-icon">📸</div>
+                <p>Modelling</p>
+            </div>
+            <div class="hobby-item">
+                <div class="hobby-icon">💃</div>
+                <p>Dancing</p>
+            </div>
+            <div class="hobby-item">
+                <div class="hobby-icon">📖</div>
+                <p>Reading</p>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer>
+    <p>&copy; 2024 Melissa Sharon Lokoroma. All rights reserved.</p>
+</footer>
+
+<style>
+/* Enhanced CSS with animations and modern design elements */
+:root {
+    --primary-color: #FF927B;
+    --secondary-color: #FFE5D9;
+    --accent-color: #FF7D5C;
+    --text-color: #2D3436;
+    --background-color: #FFF9F7;
+    --gradient-start: #FFA07A;
+    --gradient-end: #FF7F50;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    margin: 0;
+    padding: 0;
+}
+
+/* Header and Navigation Styles */
+header {
+    background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
+    padding: 1.5rem 0;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
+    text-align: center;
+    color: white;
+    margin-bottom: 1.5rem;
+    font-size: 2.5rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    gap: 2rem;
+    padding: 0;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 1.1rem;
+    padding: 0.5rem 1rem;
+    border-radius: 25px;
+    transition: all 0.3s ease;
+}
+
+nav ul li a:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    transform: translateY(-2px);
+}
+
+/* Main Content Styles */
+main {
+    max-width: 1200px;
+    margin: 3rem auto;
+    padding: 0 2rem;
+}
+
+.about-section {
+    display: flex;
+    gap: 3rem;
+    background: white;
+    border-radius: 20px;
+    padding: 3rem;
+    box-shadow: 0 10px 30px rgba(255, 160, 122, 0.1);
+    margin-bottom: 3rem;
+}
+
+.profile-image {
+    width: 300px;
+    height: 300px;
+    border-radius: 20px;
+    object-fit: cover;
+    border: 4px solid var(--primary-color);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.profile-image:hover {
+    transform: scale(1.02);
+    box-shadow: 0 15px 30px rgba(255, 160, 122, 0.2);
+}
+
+.intro-header {
+    margin-bottom: 2rem;
+}
+
+.intro-header h2 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+    background: linear-gradient(45deg, var(--gradient-start), var(--gradient-end));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: fadeIn 1s ease-out;
+}
+
+.highlight {
+    font-weight: 700;
+}
+
+.subtitle {
+    color: var(--accent-color);
+    font-size: 1.2rem;
+    font-weight: 500;
+    opacity: 0;
+    animation: slideUp 0.8s ease-out forwards;
+    animation-delay: 0.3s;
+}
+
+.bio-content {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #666;
+}
+
+.tech-skills {
+    margin-top: 2.5rem;
+}
+
+.tech-skills h3 {
+    color: var(--accent-color);
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.skills-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.skill-tag {
+    background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 25px;
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+}
+
+.skill-tag:hover {
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 5px 15px rgba(255, 160, 122, 0.3);
+    cursor: pointer;
+}
+
+.hobbies-section {
+    background: white;
+    border-radius: 20px;
+    padding: 3rem;
+    box-shadow: 0 10px 30px rgba(255, 160, 122, 0.1);
+}
+
+.hobbies-section h2 {
+    text-align: center;
+    color: var(--accent-color);
+    font-size: 2rem;
+    margin-bottom: 2.5rem;
+}
+
+.hobbies-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+    justify-items: center;
+}
+
+.hobby-item {
+    text-align: center;
+    padding: 1.5rem;
+    transition: all 0.3s ease;
+    border-radius: 15px;
+    background: linear-gradient(135deg, var(--secondary-color), white);
+}
+
+.hobby-item:hover {
+    transform: translateY(-5px) scale(1.03);
+    box-shadow: 0 10px 20px rgba(255, 160, 122, 0.2);
+    background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
+    color: white;
+}
+
+.hobby-icon {
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+    transition: transform 0.3s ease;
+}
+
+.hobby-item:hover .hobby-icon {
+    transform: scale(1.1);
+}
+
+/* Footer Styles */
+footer {
+    background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
+    color: white;
+    text-align: center;
+    padding: 1.5rem 0;
+    margin-top: 3rem;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 2rem;
+    }
+
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    .about-section {
+        flex-direction: column;
+        align-items: center;
+        padding: 2rem 1.5rem;
+    }
+
+    .profile-image {
+        width: 250px;
+        height: 250px;
+    }
+
+    .intro-header h2 {
+        font-size: 2rem;
+    }
+
+    .bio-content {
+        font-size: 1rem;
+    }
+
+    .hobbies-list {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 480px) {
+    main {
+        padding: 0 1rem;
+    }
+
+    .hobbies-list {
+        grid-template-columns: 1fr;
+    }
+}
+</style>
+{% endblock %}

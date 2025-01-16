@@ -1,10 +1,10 @@
-<!DOCTYPE html>
+{% comment %} <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %}Portfolio{% endblock %}</title>
-    <link rel="stylesheet" href="{% static 'core/style.css' %}">
+    <link rel="stylesheet" href="{% static 'port_app/style.css' %}">
 </head>
 <body>
     <header>
@@ -25,4 +25,36 @@
         <p>&copy; 2024 Melissa Sharon Lokoroma</p>
     </footer>
 </body>
+</html> {% endcomment %}
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Portfolio{% endblock %}</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'port_app/style.css' %}">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="{% url 'index' %}">Home</a></li>
+                <li><a href="{% url 'about' %}">About</a></li>
+                <li><a href="{% url 'services' %}">Services</a></li>
+                <li><a href="{% url 'resume' %}">Resume</a></li>
+                <li><a href="{% url 'contact' %}">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    {% block content %}
+    <!-- Page-specific content will go here -->
+    {% endblock %}
+
+</body>
 </html>
+
